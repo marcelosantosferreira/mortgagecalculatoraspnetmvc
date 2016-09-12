@@ -47,21 +47,18 @@
                 var interest = $("#interest").val()/100;
                 var period = $("#period").val();
 
-                console.info("Monthly payment:" + mortgagePayment(amount, interest / 12, period * 12));
+                //console.info("Monthly payment:" + mortgagePayment(amount, interest / 12, period * 12));
 
                 var monthlyPayment = formatNumber(mortgagePayment(amount, interest / 12, period * 12), 2);
-                console.log("formatNumber(monthlyPayment) = " + monthlyPayment);
+                //console.log("formatNumber(monthlyPayment) = " + monthlyPayment);
                 $("#monthlypayment").val(monthlyPayment);
 
-                var semVirgula = $("#monthlypayment").val().replace(",", "");
-                $("#monthlypayment").val(semVirgula);
+                var noCommas = $("#monthlypayment").val().replace(",", "");
+                $("#monthlypayment").val(noCommas);
 
-                console.log("monthlypayment = " + $("#monthlypayment").val());
+                //console.log("monthlypayment = " + $("#monthlypayment").val());
                 
-                /*if (confirm("Deseja continuar?")){
-                    $("#mortgageForm").submit();        
-                }
-                */
+                $("#mortgageForm").submit();        
                 
             });
         });
