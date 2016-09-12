@@ -1,0 +1,81 @@
+﻿@model MortgageCalculator.Model.Mortgage
+
+@{
+    ViewBag.Title = "Send results to my email";
+}
+@{
+    if (Model.sent)
+    {
+        <br/>
+        <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <center>
+                <span class="glyphicon glyphicon-ok"></span>
+                The results were successfully sent to the address <strong>@Html.DisplayFor(model => model.email)</strong>! Please verify you Spam inbox as well.
+            </center>
+        </div>
+    }
+}
+
+<h2>Your monthly payment is <span class="label label-default">$ @Html.DisplayFor(model => model.monthlypayment)</span></h2>
+<hr />
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.interest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.interest)%
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.period)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.period) years
+        </dd>
+
+        <dt>
+            <b>Informed in</b>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insertedIn)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<h2>Receive by email</h2>
+<div>
+    <form action="/Home/SendEmail" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                    <input type="text" id="email" name="email" class="form-control" placeholder="your email...">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success">Send</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="mortgageId" id="mortgageId" value="@Html.DisplayFor(model => model.mortgageId)" />
+    </form>
+</div>
+<hr />
+<h2>Or</h2>
+<p>
+    @Html.ActionLink("Do another simulation", "Index", null, new { @class = "btn btn-success" })
+</p>

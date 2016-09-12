@@ -1,3 +1,15 @@
+# Visual Studio Packages
+packages/
+
+# Temp Files
+MortgageCalculator.Contracts/obj
+MortgageCalculator.DAL/obj
+MortgageCalculator.Model/obj
+MortgageCalculator.Service/obj
+MortgageCalculator.Tests/obj
+MortgageCalculator.WebUI/obj
+TestResults/
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

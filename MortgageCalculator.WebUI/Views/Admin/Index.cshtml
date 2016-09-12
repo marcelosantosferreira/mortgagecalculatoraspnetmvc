@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MortgageCalculator.Model.Mortgage>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mortgage Simulations</h2>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.interest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.period)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monthlypayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.insertedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sent)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    var cssCass = item.sent ? "info" : "";
+    <tr class="@cssCass">
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.interest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.period)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monthlypayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.insertedIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sent)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Inputs</h2>
+        <p>Please inform the values and click <b>Calculate</b>. You will be given an option to receive the simulation in your Inbox.
+        </p>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputMortgageAmount" class="control-label col-md-2">Mortgage Amount</label>
+                <div>
+                    <input type="text" class="form-control" id="inputMortgageAmount" placeholder="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputInterestRate" class="control-label col-md-2">Interest Rate</label>
+                <div>
+                    <input type="text" class="form-control" id="inputInterestRate" placeholder="%">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAmortizationPeriod" class="control-label col-md-2">Amortization Period</label>
+                <div>
+                    <input type="text" class="form-control" id="inputAmortizationPeriod" placeholder="years">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-4">
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                </div>
+            </div>
+            <!--
+            <div class="form-group">
+                <label for="outputMonthlyPayment" class="control-label col-md-2">Your monthly payment</label>
+                <div >
+                    <input type="text" class="form-control" id="outputMonthlyPayment" placeholder="">
+                </div>
+            </div>-->
+        </form>
+        <h2>Your monthly payment <span class="label label-default">$ 00.00</span></h2>
+    </div>
+    <!--
+    <div class="col-md-8">
+        <h2>Amortization Table</h2>
+        <p>TODO: </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Receive by email &raquo;</a></p>
+    </div>-->
+</div>
