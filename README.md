@@ -1,3 +1,6 @@
+## Screenshot
+![alt text](screenshot.png "Mortgage Calculator - ASP.net MVC")
+
 ## Synopsis
 
 A Mortgage Calculator (a test for a job position).
