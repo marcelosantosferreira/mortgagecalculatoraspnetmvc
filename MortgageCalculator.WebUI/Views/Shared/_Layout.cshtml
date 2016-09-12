@@ -47,17 +47,18 @@
                 var interest = $("#interest").val()/100;
                 var period = $("#period").val();
 
-                //console.info("Monthly payment:" + mortgagePayment(amount, interest / 12, period * 12));
+                var monthlyPayment = getMonthlyPayment(amount, interest / 12, period * 12);
 
-                var monthlyPayment = formatNumber(mortgagePayment(amount, interest / 12, period * 12), 2);
-                //console.log("formatNumber(monthlyPayment) = " + monthlyPayment);
                 $("#monthlypayment").val(monthlyPayment);
 
-                var noCommas = $("#monthlypayment").val().replace(",", "");
-                $("#monthlypayment").val(noCommas);
+                // English Currency Format
+                //var noCommas = $("#monthlypayment").val().replace(",", "");
+                //$("#monthlypayment").val(noCommas);
 
-                //console.log("monthlypayment = " + $("#monthlypayment").val());
-                
+                // Brazilian Currency Format (commas to separate decimals) 
+                var forceCommas = $("#monthlypayment").val().replace(".", ",");
+                $("#monthlypayment").val(forceCommas);
+
                 $("#mortgageForm").submit();        
                 
             });
